@@ -1,0 +1,24 @@
+<app-nav-bar (theme)="getTheme($event)"></app-nav-bar>
+<main class="main" [ngClass]="theme">
+  <app-loader
+    [theme]="theme"
+    type="bar"
+    *ngIf="!imageService.loaded()"
+  ></app-loader>
+  <app-image-drop
+    [theme]="theme"
+    *ngIf="imageService.loaded() && !imageService.image()"
+  ></app-image-drop>
+  <app-image-viewer
+    [theme]="theme"
+    *ngIf="imageService.image() && imageService.loaded()"
+  ></app-image-viewer>
+</main>
+@if (alertService.message() && hideSnackbar()) {
+<ng-container *let="alertService.message() as message">
+  <app-snackbar
+    [message]="message.content"
+    [type]="message.type"
+  ></app-snackbar>
+</ng-container>
+}

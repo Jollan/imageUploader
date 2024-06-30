@@ -1,0 +1,64 @@
+@import "../../../partials/responsives";
+
+.container {
+  width: 30rem;
+  height: 6rem;
+  @include mobile {
+    width: 20rem;
+    height: 6rem;
+  }
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.062);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  .text {
+    font-size: small;
+    span {
+      font-weight: bold;
+    }
+  }
+  .loader {
+    width: 80%;
+    height: 6px;
+    border-radius: 5px;
+    background-color: #e5e7eb;
+    overflow: hidden;
+    .loader-bar {
+      width: 20%;
+      height: 100%;
+      border-radius: 5px;
+      background-color: #3662e3;
+      -webkit-animation: slide 1s linear infinite;
+      animation: slide 1s linear infinite;
+    }
+  }
+}
+
+.container.dark {
+  background-color: #4d5562;
+  color: #E5E7EB;
+  .loader {
+    background-color: #212936;
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(500%);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(500%);
+  }
+}

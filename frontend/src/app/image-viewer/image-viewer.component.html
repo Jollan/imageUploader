@@ -1,0 +1,15 @@
+<div class="container" [ngClass]="theme">
+  <div class="image-wrapper">
+    <img [src]="image.url" alt="image" />
+  </div>
+  <div class="buttons">
+    <a type="button" class="link" (click)="onCopyToClipboard()">
+      <img src="Link.svg" alt="link" />
+      <span> Share </span>
+    </a>
+    <a class="download" [href]="downloadUrl" [download]="image.filename">
+      <img src="download.svg" alt="download" />
+      <span> Download </span>
+    </a>
+  </div>
+</div>

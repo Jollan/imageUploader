@@ -1,0 +1,91 @@
+@import "../../../partials/responsives";
+
+.sb-container {
+  display: flex;
+  justify-content: center;
+  .sb {
+    position: fixed;
+    min-width: 25vw;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 999;
+    top: 10px;
+    margin-right: 10px;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+}
+
+.error {
+  &::before {
+    content: "😟";
+  }
+  background-color: #e74c3c;
+  color: #fff;
+}
+.success {
+  &::before {
+    content: "👌";
+  }
+  background-color: #1abc9c;
+  color: #28282b;
+}
+.info {
+  &::before {
+    content: "❗";
+  }
+  background-color: #f3c220;
+  color: #28282b;
+}
+.warning {
+  &::before {
+    content: "❓";
+  }
+  background-color: #df9814;
+  color: #28282b;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 10px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 10px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,13 @@
+<header class="header" [ngClass]="light ? 'light' : 'dark'">
+  <div class="logo">
+    <div class="logo-light" *ngIf="!light">
+      <img src="logo.svg" alt="logo" />
+      <span>ImageUpload</span>
+    </div>
+    <img src="logo-dark.svg" alt="logo-dark" *ngIf="light" />
+  </div>
+  <div class="theme" (click)="toggleTheme()">
+    <img src="Sun_fill.svg" alt="Sun" *ngIf="!light" />
+    <img src="Moon_fill.svg" alt="Moon" *ngIf="light" />
+  </div>
+</header>
