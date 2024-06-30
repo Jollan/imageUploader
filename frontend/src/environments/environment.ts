@@ -1,3 +1,3 @@
 export const environment = {
-  api: 'http://localhost:3000/service/v1/upload/image',
+  api: 'https://files-v2dh.onrender.com/service/v1/upload/image',
 };
